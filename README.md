@@ -31,7 +31,7 @@ A [SavingsEvent](src/main/java/com/qapital/savings/event/SavingsEvent.java) is a
 
    1.2. The Guilty Pleasure Rule: When the Guilty Pleasure Rule is applied to a transaction, it should check that the configured description matches the transaction's description. If so, the configured amount is saved.
    
-2. Create a method in [SavingsRulesController](src/main/java/com/qapital/savings/rule/SavingsRulesController.java) that takes a SavingsRule object as a JSON body, calles the executeRule() method implemented above and returns the list of SavingsEvents as a JSON body. Any dates in the JSON objects need to be expressed in the ISO 8601 format.
+2. Create a method in [SavingsRulesController](src/main/java/com/qapital/savings/rule/SavingsRulesController.java) that takes a SavingsRule object as a JSON body, calls the executeRule() method implemented above and returns the list of SavingsEvents as a JSON body. Any dates in the JSON objects need to be expressed in the ISO 8601 format.
 
 You are free to add any support classes you feel are necessary or would make the solution better, as well as to refactor existing supporting code as long as the above requirements are met. You may also add any third party dependencies you feel are motivated.
 
