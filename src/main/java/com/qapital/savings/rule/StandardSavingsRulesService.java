@@ -23,9 +23,9 @@ public class StandardSavingsRulesService implements SavingsRulesService {
 
         SavingsRule guiltyPleasureRule = SavingsRule.createGuiltyPleasureRule(1l, userId, "Starbucks", 3.00d);
         guiltyPleasureRule.addSavingsGoal(1l);
+        guiltyPleasureRule.addSavingsGoal(2l);
         SavingsRule roundupRule = SavingsRule.createRoundupRule(2l, userId, 2.00d);
         roundupRule.addSavingsGoal(1l);
-        roundupRule.addSavingsGoal(2l);
 
         List<SavingsRule> activeRules = new ArrayList<>();
         activeRules.add(guiltyPleasureRule);
