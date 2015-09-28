@@ -19,7 +19,7 @@ To complete the task, clone this repository, implement your solution and submit 
    
 2. Create a method in [SavingsRulesController.java](src/main/java/com/qapital/savings/rule/SavingsRulesController.java) that takes a SavingsRule object as a JSON body, calles the executeRule() method implemented above and returns the list of SavingsEvents as a JSON body.
 
-You are free to add any support classes you feel are necessary or would make the solution better, as well as to refactor existing supporting code as long as the above requirements are met.
+You are free to add any support classes you feel are necessary or would make the solution better, as well as to refactor existing supporting code as long as the above requirements are met. You may also add any third party dependencies you feel are motivated.
 
 
 
