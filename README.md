@@ -25,7 +25,7 @@ A [SavingsEvent](src/main/java/com/qapital/savings/event/SavingsEvent.java) is a
 ## Task Specification
 
 1. Implement the method **executeRule()** in [StandardSavingsRulesService](src/main/java/com/qapital/savings/rule/StandardSavingsRulesService.java). The method should load the latest transactions for the user using the TransactionsService and apply the given SavingsRule to those transactions. The result is a list of SavingsEvents. If a rule is configured for more than one SavingsGoal, the saved amount should be split equally amongst the goals.
-   Note that there are two different RuleTypes: *The Roundup Rule* and the *Guilty Pleasure Rule*. The implementation should handle both types. 
+   Note that there are two different RuleTypes: *The Roundup Rule* and the *Guilty Pleasure Rule*. The implementation should handle both types. Both of these rules should only be applied to expense transactions.
 
    1.1. The Roundup Rule: When the Roundup Rule is applied to a transaction, it rounds the amount on the transaction to the nearest multiple of the configured roundup amount and generates a SavingsEvent with the difference as the saved amount. I.e., for a transaction of $3.55 with a Roundup Rule configured to round up to the nearest $2.00, the saved amount is $0.45. For a transaction of $2.55, with an identically configured amount, the roundup would be $1.45.
 
