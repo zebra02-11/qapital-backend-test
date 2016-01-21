@@ -25,13 +25,13 @@ A [SavingsEvent](src/main/java/com/qapital/savings/event/SavingsEvent.java) is a
 ## Task Specification
 
 1. Implement the method **executeRule()** in [StandardSavingsRulesService](src/main/java/com/qapital/savings/rule/StandardSavingsRulesService.java). The method should load the latest transactions for the user using the TransactionsService and apply the given SavingsRule to those transactions. The result is a list of SavingsEvents. If a rule is configured for more than one SavingsGoal, the saved amount should be split equally amongst the goals.
-   Note that there are two different RuleTypes: *The Roundup Rule* and the *Guilty Pleasure Rule*. The implementation should handle both types. Both of these rules should only be applied to expense transactions.
+   Note that there are two different RuleTypes: **The Roundup Rule** and the **Guilty Pleasure Rule**. The implementation should handle both types. Both of these rules should only be applied to expense transactions.
 
    1.1. The Roundup Rule: When the Roundup Rule is applied to a transaction, it rounds the amount on the transaction to the nearest multiple of the configured roundup amount and generates a SavingsEvent with the difference as the saved amount. I.e., for a transaction of $3.55 with a Roundup Rule configured to round up to the nearest $2.00, the saved amount is $0.45. For a transaction of $2.55, with an identically configured amount, the roundup would be $1.45.
 
    1.2. The Guilty Pleasure Rule: When the Guilty Pleasure Rule is applied to a transaction, it should check that the configured description matches the transaction's description. If so, the configured amount is saved.
    
-2. Create a method in [SavingsRulesController](src/main/java/com/qapital/savings/rule/SavingsRulesController.java) that takes a SavingsRule object as a JSON body, calls the executeRule() method implemented above and returns the list of SavingsEvents as a JSON body. Any dates in the JSON objects need to be expressed as strings in the ISO 8601 format.
+2. Create an endpoint method in [SavingsRulesController](src/main/java/com/qapital/savings/rule/SavingsRulesController.java) that takes a SavingsRule object as a JSON body, calls the executeRule() method implemented above and returns the list of SavingsEvents as a JSON body. Any dates in the JSON objects must be expressed as strings in the ISO 8601 format.
 
 You are free to add any support classes you feel are necessary or would make the solution better, as well as to refactor existing supporting code as long as the above requirements are met. You may also add any third party dependencies you feel are motivated.
 
