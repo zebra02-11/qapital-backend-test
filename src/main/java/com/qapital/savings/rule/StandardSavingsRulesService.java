@@ -27,11 +27,7 @@ public class StandardSavingsRulesService implements SavingsRulesService {
         SavingsRule roundupRule = SavingsRule.createRoundupRule(2l, userId, 2.00d);
         roundupRule.addSavingsGoal(1l);
 
-        List<SavingsRule> activeRules = new ArrayList<>();
-        activeRules.add(guiltyPleasureRule);
-        activeRules.add(roundupRule);
-
-        return activeRules;
+        return List.of(guiltyPleasureRule, roundupRule);
     }
 
     @Override

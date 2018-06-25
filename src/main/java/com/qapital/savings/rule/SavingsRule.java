@@ -1,6 +1,5 @@
 package com.qapital.savings.rule;
 
-import org.joda.time.LocalDate;
 
 import java.util.ArrayList;
 import java.util.List;

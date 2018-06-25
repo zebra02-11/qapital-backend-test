@@ -2,9 +2,9 @@ package com.qapital.savings.event;
 
 import com.qapital.savings.rule.SavingsRule;
 import com.qapital.savings.rule.SavingsRule.RuleType;
-import org.joda.time.LocalDate;
 
-import java.util.Date;
+import java.time.Instant;
+import java.time.LocalDate;
 
 /**
  * A Savings Event represents an event in the history of a Savings Goal.
@@ -26,7 +26,7 @@ public class SavingsEvent {
 	private RuleType ruleType;
 	private Long savingsTransferId;
 	private Boolean cancelled;
-	private Date created;
+	private Instant created;
 
     public SavingsEvent() {}
 
@@ -39,7 +39,7 @@ public class SavingsEvent {
 		this.amount = amount;
 		this.triggerId = triggerId;
 		this.ruleType = savingsRule.getRuleType();
-		this.created = new Date();
+		this.created = Instant.now();
 	}
 
 	public Long getId() {
@@ -90,11 +90,12 @@ public class SavingsEvent {
 		this.date = date;
 	}
 	
-	public Double getAmount() {
+	public double getAmount() {
 		if (amount == null) {
 			return 0d;
+		} else {
+			return amount;
 		}
-		return amount;
 	}
 	
 	public void setAmount(Double amount) {
@@ -124,23 +125,24 @@ public class SavingsEvent {
 	public void setSavingsTransferId(Long savingsTransferId) {
 		this.savingsTransferId = savingsTransferId;
 	}
-	
-	public Boolean isCancelled() {
+
+	public boolean isCancelled() {
 		if (cancelled == null) {
 			return false;
+		} else {
+			return cancelled;
 		}
-		return cancelled;
 	}
 	
 	public void setCancelled(Boolean cancelled) {
 		this.cancelled = cancelled;
 	}
 
-	public Date getCreated() {
+	public Instant getCreated() {
 		return created;
 	}
 
-	public void setCreated(Date created) {
+	public void setCreated(Instant created) {
 		this.created = created;
 	}
 
