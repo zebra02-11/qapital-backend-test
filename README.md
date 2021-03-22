@@ -35,5 +35,7 @@ A [SavingsEvent](src/main/java/com/qapital/savings/event/SavingsEvent.java) is a
 
 You are free to add any support classes you feel are necessary or would make the solution better, as well as to refactor existing supporting code as long as the above requirements are met. You may also add any third party dependencies you feel are motivated.
 
+While we don't require the solution to be perfect, we do expect it to be written in a professional manner. You should use this opportunity to show us what kind of code you would write if we were to employ you.
+
 
 
