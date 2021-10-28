@@ -8,6 +8,8 @@ The code skeleton consists of a functional Spring Boot application that contains
 
 To complete the task, clone this repository, implement your solution and submit a link or zipped repository for review.
 
+While we don't require the solution to be perfect, we do expect it to be written in a professional manner. You should use this opportunity to show us what kind of code you would write if we were to employ you.
+
 ## Basic Domain Concepts
 
 ### Transaction
@@ -34,8 +36,3 @@ A [SavingsEvent](src/main/java/com/qapital/savings/event/SavingsEvent.java) is a
 2. Create an endpoint method in [SavingsRulesController](src/main/java/com/qapital/savings/rule/SavingsRulesController.java) that takes a SavingsRule object as a JSON body, calls the executeRule() method implemented above and returns the list of SavingsEvents as a JSON body. Any dates in the JSON objects must be expressed as strings in the ISO 8601 format.
 
 You are free to add any support classes you feel are necessary or would make the solution better, as well as to refactor existing supporting code as long as the above requirements are met. You may also add any third party dependencies you feel are motivated.
-
-While we don't require the solution to be perfect, we do expect it to be written in a professional manner. You should use this opportunity to show us what kind of code you would write if we were to employ you.
-
-
-
