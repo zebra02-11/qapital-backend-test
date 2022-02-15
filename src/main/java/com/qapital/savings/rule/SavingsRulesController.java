@@ -1,15 +1,13 @@
 package com.qapital.savings.rule;
 
+import com.qapital.savings.event.SavingsEvent;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/savings/rule")
+@RequestMapping("/api/savings")
 public class SavingsRulesController {
 
     private final SavingsRulesService savingsRulesService;
@@ -19,11 +17,13 @@ public class SavingsRulesController {
         this.savingsRulesService = savingsRulesService;
     }
 
-    @GetMapping("/active/{userId}")
+    @GetMapping("/rule/active/{userId}")
     public List<SavingsRule> activeRulesForUser(@PathVariable Long userId) {
         return savingsRulesService.activeRulesForUser(userId);
     }
 
-
-
+    @PostMapping("/rule")
+    public List<SavingsEvent> executeRulesForUser(@RequestBody SavingsRule savingsRule) {
+        return savingsRulesService.executeRule(savingsRule);
+    }
 }
